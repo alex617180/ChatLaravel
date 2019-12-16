@@ -17,7 +17,8 @@ class MainController extends Controller
     {       
         $comments = $this->main
             ->leftJoin('comments', 'comments.user_id', '=', 'users.id')
-            ->orderBy('comments.date', 'desc')
+            ->where('skip', '=', 1)
+            ->orderBy('comments.id', 'desc')
             ->paginate(5);
         return view('main', ['comments' => $comments]);
     }

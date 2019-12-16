@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/factory', function () {
-//     factory(App\Main::class, 5)->create();
-//     echo 'комменты добавлены';
-// });
+Route::get('/factory', function () {
+   
+   factory(App\Main::class, 5)->create();
+   echo 'комменты добавлены';
+});
 
 Route::middleware(['admin'])->group(function () {
     //Admin

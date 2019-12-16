@@ -16,7 +16,7 @@ class AdminController extends Controller
 	{
 		$comments = $this->admin
 			->leftJoin('comments', 'comments.user_id', '=', 'users.id')
-			->orderBy('comments.date', 'desc')
+			->orderBy('comments.id', 'desc')
 			->paginate(5);
 		return view('admin', ['comments' => $comments]);
 	}
